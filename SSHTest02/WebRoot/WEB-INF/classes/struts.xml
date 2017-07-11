@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<package name="emp" extends="struts-default">
+
+		<!-- 全局视图 -->
+		<global-results>
+			<result name="success">/index.jsp</result>
+
+			<!--错误视图配置 -->
+			<result name="null">/error/null.jsp</result>
+			<result name="error">/error/error.jsp</result>
+		</global-results>
+
+		<!--全局异常 -->
+		<global-exception-mappings>
+			<exception-mapping result="null" exception="java.lang.NullPointException"></exception-mapping>
+			<exception-mapping result="error" exception="java.lang.Exception"></exception-mapping>
+		</global-exception-mappings>
+
+		<!-- class属性里面不写action全路径了，因为写，action对象创建两次 写spring配置的action的bean的id值 -->
+		<action name="emp_*" class="employeeAction" method="{1}">
+
+			<!--列表展示 -->
+			<result name="list">/WEB-INF/list.jsp</result>
+		</action>
+	</package>
+</struts>
+
+
+
