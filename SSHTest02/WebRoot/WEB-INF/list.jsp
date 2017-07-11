@@ -34,7 +34,7 @@
   	 					
   	 					<s:a href="emp_delete?id=%{#emp.id}">删除</s:a>
   	 				</td>
-  	 			</tr>
+  	 			</tr>  
   	 		</s:iterator>
   	 	</s:if>
   	 	<s:else>
